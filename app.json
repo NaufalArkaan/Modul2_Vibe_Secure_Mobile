@@ -15,7 +15,8 @@
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "package": "com.naufalarkaan.Modul2_Vibe_Secure"
     },
     "web": {
       "favicon": "./assets/favicon.png"

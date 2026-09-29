@@ -76,7 +76,7 @@ export const AdaptiveProfile = ({ onSaveToken, onClearToken, storedToken }) => {
             <Text style={styles.label}>Status Penyimpanan Hardware:</Text>
             <Text style={styles.tokenStatusText}>
               {storedToken
-                ? `Terenkripsi: ${storedToken.substring(0, 10)}...`
+                ? `🔒 Terenkripsi (Keystore/Keychain): ${'●'.repeat(Math.min(storedToken.length, 12))}`
                 : 'Belum Ada Token Tersimpan'}
             </Text>
           </View>

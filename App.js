@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { AdaptiveProfile } from './components/AdaptiveProfile';
 import { AuthService } from './services/AuthService';
 
@@ -34,14 +35,16 @@ export default function App() {
   };
 
   return (
-    <SafeAreaView style={styles.mainContainer}>
-      <StatusBar barStyle="dark-content" backgroundColor="#F4F6F9" />
-      <AdaptiveProfile
-        onSaveToken={handleSaveToken}
-        onClearToken={handleClearToken}
-        storedToken={authToken}
-      />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.mainContainer}>
+        <StatusBar barStyle="dark-content" backgroundColor="#F4F6F9" />
+        <AdaptiveProfile
+          onSaveToken={handleSaveToken}
+          onClearToken={handleClearToken}
+          storedToken={authToken}
+        />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
